@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SignupUser } from 'src/app/models/signup-user.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { SignupUser } from 'src/app/models/signup-user.model';
 })
 export class ClientComponent implements OnInit {
   info: SignupUser[] = [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.showInfo();
@@ -36,7 +37,8 @@ export class ClientComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('user-info')
-    
+    localStorage.removeItem('user-info');
+    window.location.reload();
+    this.router.navigate(['/client/login'])
   }
 }

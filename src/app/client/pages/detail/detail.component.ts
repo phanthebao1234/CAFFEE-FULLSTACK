@@ -14,7 +14,7 @@ export class DetailComponent implements OnInit {
   listProduct: any;
   listdata: any;
   id: number = 0;
-  order:Checkout = new Checkout;
+  order: Checkout = new Checkout();
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -41,46 +41,22 @@ export class DetailComponent implements OnInit {
   }
 
   addtoCart(product: any) {
-    console.log('Emit: ', product);
-    const oldOrder = this.checkExits(product);
-    if (oldOrder) {
-      oldOrder.quantity += 1;
-    } else {
-      product.quantity = 1;
-      this.order.carts.push(product);
-      console.log(this.order.carts);
-    }
-
-  }
-
-  // createOrder() {
-  //   const user = localStorage.getItem('user-info');
-  //   if(user && user != "") {
-  //     console.log(user);
-
-  //     this.
-  //   }
-  // }
-
-  checkExits(product: Product) {
-    for (let i = 0; i < this.order.carts.length; i++) {
-      const element = this.order.carts[i];
-      if (product.id == element.id) {
-        return product;
+    try {
+      const oldCart = localStorage.getItem('cart');
+      if (oldCart && oldCart != '') {
+        product.quantity = 1
+        const cart = [...JSON.parse(oldCart), product];
+        localStorage.setItem('cart', JSON.stringify(cart));
+      } else {
+        const cart: any = [];
+        product.quantity = 1
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
       }
+      alert("Bạn đã thêm sản phẩm thành công")
+    } catch (error) {
+      console.log(error);
     }
-    return false;
   }
-
-  calcCart(){
-    let total = 0;
-    for (let i = 0; i < this.order.carts.length; i++) {
-      const element = this.order.carts[i];
-      total = total + (element.quantity* element.price);
-    }
-
-    this.order.totalAmout = total;
-  }
-
 
 }
