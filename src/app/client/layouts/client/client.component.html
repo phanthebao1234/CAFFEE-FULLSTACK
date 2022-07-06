@@ -1,0 +1,174 @@
+<!-- Header -->
+<div class="header">
+  <div class="container fixed-top">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+      >
+        <img src="/assets/logo.png" alt="" class="logo" />
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li>
+          <a
+            [routerLink]="['/client/home']"
+            class="nav-link px-2 link-secondary text-capitalize"
+            routerLinkActive="routerLinkActive"
+            >Trang chủ</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/client/product']"
+            class="nav-link px-2 link-dark"
+            routerLinkActive="routerLinkActive"
+            >Sản phẩm</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/client/blogs']"
+            class="nav-link px-2 link-dark"
+            routerLinkActive="routerLinkActive"
+            >Blogs</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/client/contact']"
+            class="nav-link px-2 link-dark"
+            routerLinkActive="routerLinkActive"
+            >Liên hệ</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/client/info']"
+            class="nav-link px-2 link-dark"
+            routerLinkActive="routerLinkActive"
+            >Thông tin</a
+          >
+        </li>
+      </ul>
+      <div class="d-flex justify-content-center">
+        <div class="user" *ngFor="let item of info">
+          <h4 class="fw-bold">{{item.fullName}}</h4>
+          <div class="hidden-menu">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Tài khoản của tôi</a>
+              <a [routerLink]="['/client/cart']" class="list-group-item list-group-item-action">Giỏ hàng</a>
+              <a [routerLink]="['/client/login']" (click)="logout()" class="list-group-item list-group-item-action">Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 text-end" *ngIf="info.length == 0">
+        <button type="button" class="btn btn-outline-primary me-2">
+          <a [routerLink]="['/client/login']">Đăng nhập</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary me-2">
+          <a [routerLink]="['/client/signup']">Đăng kí</a>
+        </button>
+      </div>
+    </header>
+  </div>
+</div>
+
+<!-- End header -->
+
+<!-- Content -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<!-- End Content -->
+
+<!-- Footer -->
+<div class="" style="margin-top: 200px">
+  <div class="container-fluid">
+    <div class="row footer">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2">
+        <h4 class="fw-bold">Giới thiệu</h4>
+        <ul>
+          <li>
+            <a href="#">Về Chúng Tôi</a>
+          </li>
+          <li>
+            <a href="#">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="#">Khuyến mãi</a>
+          </li>
+          <li>
+            <a href="#">Chuyện cà phê</a>
+          </li>
+          <li>
+            <a href="#">Cửa Hàng</a>
+          </li>
+          <li>
+            <a href="#">Tuyển dụng</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h4 class="fw-bold">Điều khoản</h4>
+        <ul>
+          <li>
+            <a href="#">Điều khoản sử dụng</a>
+          </li>
+          <li>
+            <a href="#">Quy tắc bảo mật</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h4 class="fw-bold">Đặt hàng: 1800 6936</h4>
+        <h4 class="fw-bold">Liên hệ</h4>
+        <p>
+          Tầng 3-4 Hub Building <br />
+          195/10E Điện Biên Phủ, P.15 ,<br />
+          Q.Bình Thạnh, TP.Hồ Chí Minh
+        </p>
+      </div>
+      <div class="col-lg-4 ps-5">
+        <a
+          class=""
+          href="https://www.facebook.com/The.Coffee.House.2014/"
+          target="_blank"
+          ><img
+            class="_1drn _-s img"
+            src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t39.30808-1/239270325_3045507619056577_531106232057750834_n.jpg?stp=cp0_dst-jpg_p50x50&amp;_nc_cat=1&amp;ccb=1-7&amp;_nc_sid=dbb9e7&amp;_nc_ohc=RoY9zdzA1TMAX_siuTm&amp;_nc_ht=scontent.fsgn5-14.fna&amp;edm=AOm7FCUEAAAA&amp;oh=00_AT_LKC-4hFqvrH6gkfbGkrRawlDOYlAGdhsPIuCJoknzhA&amp;oe=62C9124A"
+            height="70"
+            width="70"
+            alt=""
+        /></a>
+        <ul class="" style="display: flex;">
+          <li>
+            <a href="https://www.facebook.com/The.Coffee.House.2014/">
+              <img
+                src="https://file.hstatic.net/1000075078/file/test_fd4e30831d14438f9d0f1fcf255dfadb.svg"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/thecoffeehousevn/">
+              <img
+                src="https://file.hstatic.net/1000075078/file/test_db37bb3840ac45f3a0a3cf7aa8a57d9e.svg"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End footer -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>

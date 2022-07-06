@@ -1,0 +1,30 @@
+<div class="container product">
+  <h1 class="product__title text-capitalize fw-bold text-center my-3 text-info">Danh sách sản phẩm</h1>
+  <table class="table table-striped .table-bordered">
+    <thead>
+      <tr class="">
+        <th>STT</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Hình Sản Phẩm</th>
+        <th>Giá Sản Phẩm</th>
+        <th>Hành Động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listProduct; let i = index">
+        <td>{{ i + 1 }}.</td>
+        <td><b>{{ item.name }}</b></td>
+        <td>
+          <img src="/assets/images/{{ item.image}}" class="product__image" alt="">
+        </td>
+        <td>
+          {{ item.price}}.000đ
+        </td>
+        <td>
+          <button class="btn btn-warning" (click)="edit(item.id)">Edit</button><br>
+          <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

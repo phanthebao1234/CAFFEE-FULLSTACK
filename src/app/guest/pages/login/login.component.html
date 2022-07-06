@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h3 class="guest-title text-uppercase text-info">Đăng nhập vào vị trí admin</h3>
+        </div>
+        <form #frmLogin="ngForm" (submit)="onSubmit(frmLogin)">
+          <div class="form-group mb2 mt-5">
+              <label for="">User name</label>
+              <input type="text" [(ngModel)]="admin.userAdmin" class="form-control" name="username">
+          </div>
+          <div class="form-group mb2 mt-3">
+              <label for="">Password</label>
+              <input type="password" [(ngModel)]="admin.passwordAdmin" class="form-control" name="password">
+          </div>
+          <div class="text-center mt-3">
+              <button type="submit" class="btn btn-primary w-100 mb-2">Đăng Nhập</button>
+              <a routerLink="['/auth/forgot']">Quên mật khẩu</a>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 filter">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item " (click)="reset()">Tất Cả</li>
+        <li class="list-group-item ">Cà phê
+          <ul class="">
+            <li (click)="filterCategory('Cà Phê Việt Nam')">Cà Phê Việt Nam</li>
+            <li (click)="filterCategory('Cà Phê Máy')">Cà Phê Máy</li>
+            <li (click)="filterCategory('Cold Brew')">Cold Brew</li>
+          </ul>
+        </li>
+        <li class="list-group-item">Trà
+          <ul>
+            <li>Trà trái cây</li>
+            <li>Trà sữa Macchiato</li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col-sm-9 products" *ngIf="listProduct.length > 0">
+      <div class="products__banner">
+        <img src="/assets/images/background.jpg" products__banner-img alt="">
+      </div>
+      <div class="row products__list" *ngIf="filteredItems.length > 0">
+        <div class="col-sm-4" *ngFor="let product of filteredItems" (click)="detail(product.id)">
+          <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
+          <h6 class="products__list-name">{{ product.name }}</h6>
+          <p class="products__list-price">{{ product.price }} $</p>
+        </div>
+      </div>
+      <div class="row products__list" *ngIf="filteredItems.length == 0">
+        <div class="col-sm-4" *ngFor="let product of listProduct" (click)="detail(product.id)">
+          <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
+          <h6 class="products__list-name">{{ product.name }}</h6>
+          <p class="products__list-price">{{ product.price }} $</p>
+        </div>
+      </div>
+      <h1 *ngIf="listProduct.length == 0">Loading...</h1>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,45 @@
+
+.filter {
+  border-right: 2px solid #00000026;
+  top: 70px;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  padding-right: 53px;
+}
+
+.products {
+
+  &__banner {
+    padding-left: 60px;
+    padding-bottom: 20px;
+    img {
+      width: 100%;
+    }
+
+  }
+
+  &__list {
+    padding-left: 60px;
+    &-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 13px 0px #00000040;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-name {
+      padding-top: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    &-price {
+      font-size: 14px;
+    }
+  }
+
+}

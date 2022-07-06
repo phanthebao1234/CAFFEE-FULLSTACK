@@ -1,0 +1,17 @@
+.menu {
+  height: 1000px;
+  width: auto;
+  margin: 30px 0;
+  background-color: aquamarine;
+  &__nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-right: -35px;
+  }
+}
+
+.routerLinkActive {
+  background-color: rgb(219, 12, 12);
+  // color: rgb(219, 12, 12);
+}
