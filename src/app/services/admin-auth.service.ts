@@ -12,7 +12,7 @@ export class AdminAuthService {
     return new Promise((resolve, reject) => {
       try {
         if (user.userAdmin =="admin" && user.passwordAdmin == "admin") {
-          localStorage.setItem("userLogin", JSON.stringify(user));
+          localStorage.setItem("adminLogin", JSON.stringify(user));
           resolve(user);
         }
         else {
@@ -25,7 +25,7 @@ export class AdminAuthService {
   }
 
   checkLogin() {
-    let strUser = localStorage.getItem("userLogin");
+    let strUser = localStorage.getItem("adminLogin");
     if (strUser && strUser.length > 0) {
       this._userLogin = JSON.parse(strUser);
       return true;

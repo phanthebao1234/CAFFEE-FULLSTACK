@@ -10,11 +10,17 @@ import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
 import { StoreModule } from '@ngrx/store';
 import { GuestModule } from './guest/guest.module';
+import { DatePipe } from './pipe/date.pipe';
+import { ProductDirectiveDirective } from './directive/product-directive.directive';
+// import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DatePipe,
+    ProductDirectiveDirective,
+
   ],
   imports: [
     BrowserModule,

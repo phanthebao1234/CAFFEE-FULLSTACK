@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from '../guard/admin.guard';
 import { AdminComponent } from './layouts/admin/admin.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { OrderComponent } from './pages/order/order.component';
 import { ProductComponent } from './pages/product/product.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
         path: "order",
         component: OrderComponent,
       },
+      {
+        path: "blogs",
+        component: BlogsComponent,
+      }
 
     ]
   }

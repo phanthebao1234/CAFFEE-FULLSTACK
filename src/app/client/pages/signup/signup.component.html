@@ -58,10 +58,10 @@
                 #email="ngModel"
                 [(ngModel)]="user.email"
                 name="email"
+                required
               />
               <div *ngIf="email.invalid && email.dirty" class="alert alert-danger" role="alert">
-                <strong *ngIf="email.errors?.['required']">Số điện thoại là bắt buộc</strong>
-
+                <strong *ngIf="email.errors?.['required']">Tài khoản Email là bắt buộc</strong>
               </div>
             </div>
             <div class="mb-3">
@@ -73,8 +73,13 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 [(ngModel)]="user.password"
+                #password="ngModel"
                 name="password"
+                required
               />
+              <div *ngIf="password.invalid && password.dirty" class="alert alert-danger" role="alert">
+                <strong *ngIf="password.errors?.['required']">Mật khẩu là bắt buộc</strong>
+              </div>
             </div>
             <button type="submit" class="btn btn-primary text-capitalize">Tạo tài khoản</button>
         </form>

@@ -47,7 +47,6 @@ export class CartComponent implements OnInit {
   }
 
   removeCart(i: number) {
-    console.log(i);
     this.summary.carts.splice(i, 1);
     this.calcCart();
     localStorage.setItem('cart', JSON.stringify(this.summary.carts))

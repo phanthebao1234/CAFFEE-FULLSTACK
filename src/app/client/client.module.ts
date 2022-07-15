@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './pages/detail/detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { DemoDirectiveDirective } from '../directive/demo-directive.directive';
+import { SearchPipe } from '../pipe/search.pipe';
 @NgModule({
   declarations: [
     ClientComponent,
@@ -22,7 +23,8 @@ import { HomeComponent } from './pages/home/home.component';
     DetailComponent,
     CartComponent,
     HomeComponent,
-
+    DemoDirectiveDirective,
+    SearchPipe
   ],
   imports: [
     CommonModule,

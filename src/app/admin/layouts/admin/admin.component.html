@@ -26,9 +26,31 @@
             >Đơn Hàng</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-uppercase btn btn-primary btn-lg text-light my-4"
+            [routerLink]="['/admin/blogs']"
+            routerLinkActive="routerLinkActive"
+            >Bài Viết</a
+          >
+        </li>
       </ul>
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-10 ms-5">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="#" class="title">
+            <img src="/assets/logo.png" style="width: 75px; height: 75px; margin: -10px 0;" alt=""> THE CAFFEE HOUSE
+          </a>
+          <span class="navbar-brand mb-0 h1 showmenu">Admin
+            <div class="hidden-menu">
+              <div class="list-group">
+                <a  (click)="logout()" class="list-group-item list-group-item-action">Đăng xuất</a>
+              </div>
+            </div>
+          </span>
+        </div>
+      </nav>
       <router-outlet></router-outlet>
     </div>
   </div>

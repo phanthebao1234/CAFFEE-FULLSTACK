@@ -43,8 +43,7 @@ export class LoginComponent implements OnInit {
         if (user) {
           alert("Login successful")
           this.frmLogin.reset();
-          this.router.navigate(['client/product']);
-          window.location.reload();
+          this.router.navigate(['client/home']);
         }
         else {
           alert("User is not found")

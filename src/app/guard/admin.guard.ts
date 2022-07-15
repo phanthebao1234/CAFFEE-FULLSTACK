@@ -11,7 +11,6 @@ export class AdminGuard implements CanActivateChild {
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (this.adminAuth.checkLogin()) {
-        console.log("Chay tiep")
         return true;
       }
       else {

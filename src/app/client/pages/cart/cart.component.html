@@ -1,6 +1,6 @@
 <div class="cart container">
   <div *ngIf="summary.carts.length > 0">
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>STT</th>
@@ -13,7 +13,7 @@
       </thead>
       <tbody>
         <!-- Sử dụng ngFor lặp qua ở đây -->
-        <tr *ngFor="let item of summary.carts; let i = index">
+        <tr *ngFor="let item of summary.carts; let i = index" [appDemoDirective]="'#A9A9A9'" leave="#F8F8FF">
           <td>{{ i + 1 }}</td>
           <td><b>{{ item.name }}</b></td>
           <td>
@@ -36,7 +36,7 @@
     <h3>Giỏ hàng của bạn chưa có sản phẩm nào</h3>
     <a [routerLink]="['/client/product']">Quay về để tiếp tục mua hàng</a>
   </div>
-  <div class="d-flex">
+  <div class="">
     <h5>Tổng Tiền: {{ summary.totalAmount }}.000đ</h5>
     <button class="btn btn-success" (click)="thanhtoan()">Thanh toán</button>
   </div>

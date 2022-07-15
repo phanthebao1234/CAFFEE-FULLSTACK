@@ -1,11 +1,19 @@
 
-.filter {
-  border-right: 2px solid #00000026;
-  top: 70px;
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  padding-right: 53px;
+.parent {
+  width: auto;
+  height: 100%;
+  .filter {
+    border-right: 2px solid #00000026;
+    top: 70px;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    padding-right: 53px;
+
+    li:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .products {
@@ -41,5 +49,6 @@
       font-size: 14px;
     }
   }
+
 
 }

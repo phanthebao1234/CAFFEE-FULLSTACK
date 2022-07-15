@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row parent">
     <div class="col-sm-3 filter">
       <ul class="list-group list-group-flush">
         <li class="list-group-item " (click)="reset()">Tất Cả</li>
@@ -10,31 +10,37 @@
             <li (click)="filterCategory('Cold Brew')">Cold Brew</li>
           </ul>
         </li>
-        <li class="list-group-item">Trà
+        <li class="list-group-item" >Giá
           <ul>
-            <li>Trà trái cây</li>
-            <li>Trà sữa Macchiato</li>
+            <li (click)="priceAscending()">Giá từ thấp đến cao</li>
+            <li (click)="priceDescending()">Giá từ cao đến thấp</li>
           </ul>
         </li>
-
+        <div class="form-group list-group-item">
+          <label for="search-text">Tìm kiếm sản phẩm</label>
+          <input type="text" class="form-control" id="search-text" aria-describedby="search-text"
+            [(ngModel)]="searchText" placeholder="Nhập sản phẩm tìm kiếm"
+            autofocus>
+        </div>
       </ul>
     </div>
     <div class="col-sm-9 products" *ngIf="listProduct.length > 0">
+
       <div class="products__banner">
         <img src="/assets/images/background.jpg" products__banner-img alt="">
       </div>
       <div class="row products__list" *ngIf="filteredItems.length > 0">
-        <div class="col-sm-4" *ngFor="let product of filteredItems" (click)="detail(product.id)">
+        <div class="col-sm-4" *ngFor="let product of filteredItems | search: searchText" (click)="detail(product.id)">
           <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
           <h6 class="products__list-name">{{ product.name }}</h6>
           <p class="products__list-price">{{ product.price }} $</p>
         </div>
       </div>
       <div class="row products__list" *ngIf="filteredItems.length == 0">
-        <div class="col-sm-4" *ngFor="let product of listProduct" (click)="detail(product.id)">
+        <div class="col-sm-4" *ngFor="let product of listProduct | search: searchText" (click)="detail(product.id)">
           <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
           <h6 class="products__list-name">{{ product.name }}</h6>
-          <p class="products__list-price">{{ product.price }} $</p>
+          <p class="products__list-price">{{ product.price }}.000đ</p>
         </div>
       </div>
       <h1 *ngIf="listProduct.length == 0">Loading...</h1>

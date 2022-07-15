@@ -10,13 +10,12 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductComponent implements OnInit {
   listProduct: Product[] = [];
+  searchText:string = "";
   constructor(private productService: ProductService, private router: Router ) { }
 
   ngOnInit(): void {
     this.loadData();
-
     this.filterCategory("tatca");
-    console.log(typeof this.listProduct);
   }
 
   //Lấy dữ liệu về
@@ -47,8 +46,17 @@ export class ProductComponent implements OnInit {
   }
 
   detail(id: number) {
-    console.log("ID ",id);
     this.router.navigate(['/client/detail/', id])
   }
 
+  // Sort price
+  priceAscending() {
+    this.listProduct.sort((a:any, b:any) => parseFloat(a.price) - parseFloat(b.price));
+    this.filteredItems.sort((a:any, b:any) => parseFloat(a.price) - parseFloat(b.price));
+  }
+
+  priceDescending() {
+    this.listProduct.sort((a:any, b:any) => parseFloat(b.price) - parseFloat(a.price));
+    this.filteredItems.sort((a:any, b:any) => parseFloat(b.price) - parseFloat(a.price));
+  }
 }

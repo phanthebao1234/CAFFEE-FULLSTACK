@@ -40,4 +40,30 @@ export class BaseService {
       }
     })
    }
+
+   //Method Delete
+   delete(path: string, body:any = {}) {
+    return new Promise((resolve, reject) => {
+      try {
+        this.HttpClient.delete(this.API_URL + path, body).subscribe(res => {
+          resolve(res)
+        })
+      } catch (error) {
+        reject(error)
+      }
+    })
+   }
+
+   //Method Patch
+   put(path: string, body:any = {}) {
+    return new Promise((resolve, reject) => {
+      try {
+        this.HttpClient.patch(this.API_URL + path, body).subscribe(res => {
+          resolve(res)
+        })
+      } catch (error) {
+        reject(error)
+      }
+    })
+   }
 }

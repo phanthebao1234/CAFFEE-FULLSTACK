@@ -1,0 +1,121 @@
+.page {
+
+  &_header {
+
+    &-title {
+      text-align: center;
+      color: #000;
+      font-weight: bold;
+      text-transform: capitalize;
+      font-size: 24px;
+      position: relative;
+      margin-bottom: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #E57905;
+    }
+
+    &-description {
+      width: 588px;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 24px;
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    &-tabs {
+
+      ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 10;
+      }
+      li {
+        padding: 0 12px;
+      }
+      a {
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 120px;
+        height: 40px;
+        transition: unset;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 30px;
+        line-height: 40px;
+        text-decoration: none;
+      }
+      a:hover {
+        background: #fff7e6;
+        color: #e57905;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &_blog {
+    &-name {
+      font-size: 22px;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    &-date {
+      font-size:12px;
+      margin: 10px 0;
+      color: rgba(0, 0, 0, 0.45);
+    }
+    &-description {
+      line-height: 24px;
+    }
+    &-hashtag {
+      font-size: 11px;
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    &-list {
+      display: flex;
+      margin-bottom: 24px;
+      margin-right: 100px;
+    }
+
+    h2 {
+      padding-left: 12px;
+      border-left: 4px solid #E57905;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+  }
+}
+
+.image-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.image-blog{
+  width: 40%;
+  border-radius: 10px;
+}
+
+.blog {
+  background: #FFF7E6;
+  margin-top: 120px;
+  &-image {
+    margin-top: -40px;
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  &-content {
+    margin-left: 20px;
+  }
+}
