@@ -13,6 +13,11 @@ import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DemoDirectiveDirective } from '../directive/demo-directive.directive';
 import { SearchPipe } from '../pipe/search.pipe';
+import { BlogsComponent } from './pages/blogs/blogs.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BlogsdetailComponent } from './pages/blogsdetail/blogsdetail.component';
+import { UserComponent } from './pages/user/user.component';
+import { ToggleDirective } from '../directive/toggle.directive';
 @NgModule({
   declarations: [
     ClientComponent,
@@ -24,14 +29,18 @@ import { SearchPipe } from '../pipe/search.pipe';
     CartComponent,
     HomeComponent,
     DemoDirectiveDirective,
-    SearchPipe
+    SearchPipe,
+    BlogsComponent,
+    BlogsdetailComponent,
+    UserComponent,
+    ToggleDirective,
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
+    NgxPaginationModule
   ]
 })
 export class ClientModule { }

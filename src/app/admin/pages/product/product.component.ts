@@ -14,10 +14,14 @@ export class ProductComponent implements OnInit {
   editproduct: Product = new Product;
   p: number = 1;
   count: number = 5;
+
+  // newProduct.id:number = new Date().getTime();
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.loadProduct();
+    // console.log(this.randomId);
+    this.newProduct.id = new Date().getTime();
   }
 
   loadProduct() {
@@ -34,11 +38,11 @@ export class ProductComponent implements OnInit {
     this.editproduct = item;
   }
   delete(id:number, name:string) {
-    if(window.confirm("Bạn chắc chắn muốn xóa chứ ? Sản Phẩm ID: " + name)) {
+    if(window.confirm("Bạn chắc chắn muốn xóa chứ ? Sản Phẩm: " + name)) {
       this.productService.deleteProduct(id)
       .then(response => {
         this.listProduct.splice(this.listProduct.findIndex(e => e.id === id), 1);
-        alert("Bạn có muốn xóa sản phẩm này chứ ? " + id);
+        alert("Xóa thành công!");
         this.loadProduct();
       })
     }

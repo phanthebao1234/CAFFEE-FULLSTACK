@@ -18,6 +18,7 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBlogs();
+    this.newBlogs.id = new Date().getTime();
   }
 
   // load data
@@ -32,7 +33,7 @@ export class BlogsComponent implements OnInit {
   }
 
   //Add Blogs
-  addProduct(frmAddBlogs: NgForm) {
+  addBlogs(frmAddBlogs: NgForm) {
     if (frmAddBlogs.valid) {
       this.blogsService.addBlogs(frmAddBlogs.value);
       this.listBlogs.push(frmAddBlogs.value);
@@ -57,23 +58,19 @@ export class BlogsComponent implements OnInit {
       .then(response => {
         this.listBlogs.splice(this.listBlogs.findIndex(e => e.id === id), 1);
         this.loadBlogs();
-        alert("Xóa thành công")
+        alert("Xóa thành công!")
       })
     }
   }
 
   handleEdit(frmEditBlogs: NgForm) {
-    try {
-      if (frmEditBlogs.valid) {
-        this.blogsService.editBlogs(this.editBlogs, this.editBlogs.id)
-          .then((res) => {
-            frmEditBlogs.reset();
-            this.loadBlogs();
-            alert("Cập nhật bài viết thành công");
-          })
-      }
-    } catch (error) {
-
+    if (frmEditBlogs.valid) {
+      this.blogsService.editBlogs(this.editBlogs, this.editBlogs.id)
+        .then((res) => {
+          frmEditBlogs.reset();
+          this.loadBlogs();
+          alert("Cập nhật bài viết thành công");
+        })
     }
   }
 }

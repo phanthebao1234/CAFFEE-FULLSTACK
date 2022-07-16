@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class DetailComponent implements OnInit {
   listProduct: any;
   listdata: any;
-  id: number = 0;
+  id: any;
   order: Checkout = new Checkout();
   constructor(
     private productService: ProductService,

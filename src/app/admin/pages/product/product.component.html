@@ -106,6 +106,7 @@
               </div>
 
               <input type="hidden" name="quantity" [(ngModel)]="newProduct.quantity" value="1">
+              <input type="hidden" name="id" [(ngModel)]="newProduct.id">
             </div>
 
             <button type="submit" class="btn btn-primary text-capitalize text-center">Thêm Sản Phẩm</button>
@@ -212,6 +213,7 @@
               </div>
 
               <input type="hidden" name="quantity" [(ngModel)]="editproduct.quantity" value="1">
+              <input type="hidden" name="id" [(ngModel)]="editproduct.id" value="">
             </div>
 
             <button type="submit" class="btn btn-primary text-capitalize text-center">Cập Nhật Sản Phẩm</button>
@@ -236,7 +238,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listProduct | paginate: { itemsPerPage: count, currentPage: p}; ; let i = index">
+      <tr *ngFor="let item of listProduct | paginate: { itemsPerPage: count, currentPage: p};  let i = index">
         <td>{{ i + 1 }}.</td>
         <td><b>{{ item.name }}</b></td>
         <td>

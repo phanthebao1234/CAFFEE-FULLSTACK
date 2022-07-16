@@ -18,4 +18,8 @@ export class AuthenService extends BaseService {
   postUserSignup(user:SignupUser) {
     return this.post("/users", user)
   }
+
+  editUser(user:SignupUser, id:number) {
+    return this.put("/users/"+ id, user)
+  }
 }

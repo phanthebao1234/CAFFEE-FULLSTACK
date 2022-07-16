@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { GuestModule } from './guest/guest.module';
 import { DatePipe } from './pipe/date.pipe';
 import { ProductDirectiveDirective } from './directive/product-directive.directive';
+// import { ToggleDirective } from './directive/toggle.directive';
 // import { SearchPipe } from './pipe/search.pipe';
 
 
@@ -20,6 +21,7 @@ import { ProductDirectiveDirective } from './directive/product-directive.directi
     AppComponent,
     DatePipe,
     ProductDirectiveDirective,
+    // ToggleDirective,
 
   ],
   imports: [

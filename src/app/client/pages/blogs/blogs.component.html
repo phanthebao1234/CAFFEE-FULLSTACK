@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="blog">
+    <div class="blog__header">
+      <h1 class="blog__header-title">Chuyện Nhà</h1>
+      <p> The Coffee House sẽ là nơi mọi người xích lại gần nhau, đề cao giá trị kết nối con người và sẻ chia<br> thân tình bên những tách cà phê, ly trà đượm hương, truyền cảm hứng về lối sống hiện đại.</p>
+      <div class="blog__header-tabs d-flex justify-content-center">
+        <button type="button" class="rounded-pill btn btn-outline-warning px-5 py-2">Tất cả</button>
+        <button type="button" class="rounded-pill btn btn-outline-warning px-5 py-2">Coffeeholic</button>
+        <button type="button" class="rounded-pill btn btn-outline-warning px-5 py-2">Teaholic</button>
+        <button type="button" class="rounded-pill btn btn-outline-warning px-5 py-2">Blog</button>
+      </div>
+    </div>
+    <div class="row blog__content">
+      <div class="col-lg-8">
+        <div class="row mb-4" *ngFor="let blog of listBlogs">
+          <div class="col-sm-5 blog__content-image">
+            <a [routerLink]="['/client/blogs/' + blog.id]">
+              <img src="/assets/blogs/{{ blog.imagesThumbnails }}" alt="">
+            </a>
+          </div>
+          <div class="col-sm-7">
+            <h3 class="blog__content-title">
+              <a (click)="detail(blog.id)">{{ blog.title }}</a>
+            </h3>
+            <p class="blog__content-date">{{ blog.date }}</p>
+            <p class="blog__content-desc">{{ blog.description }}</p>
+            <p class="blog__content-hashtags">{{ blog.hashtags }}</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+        <!-- List danh sách blogs -->
+
+      </div>
+      <div class="col-lg-4">
+        <!-- Lọc  -->
+      </div>
+    </div>
+  </div>
+</div>

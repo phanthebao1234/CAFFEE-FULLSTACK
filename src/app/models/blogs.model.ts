@@ -1,5 +1,5 @@
 export class Blogs {
-  id:number = 0;
+  id:any;
   title:string = "";
   date:Date|string = new Date;
   description:string = "";

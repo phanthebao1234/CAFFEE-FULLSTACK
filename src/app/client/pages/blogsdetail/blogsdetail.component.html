@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div>
+    <div class="blogs">
+      <div class="blogs__thumb" style="background-image: url(/assets/blogs/{{listBlogs.imagesThumbnails}})">
+        <!-- <img src="/assets/blogs/{{ listBlogs.imagesThumbnails}}" alt=""> -->
+      </div>
+      <div class="blogs__content container">
+        <div>
+          <h1 class="blogs__content-title">
+            {{listBlogs.title}}
+            <p class="blogs__content-date">{{listBlogs.date}}</p>
+          </h1>
+          <div class="blogs__content-content">
+            {{listBlogs.content}}
+          </div>
+          <p class="blogs__content-hashtags">{{ listBlogs.hashtags }}</p>
+          <!-- <img src="/assets/images/{{listBlogs.images }}" alt=""> -->
+          <div  class="d-flex justify-content-center" *ngFor="let img of listBlogs.images">
+            <img src="/assets/blogs/{{img}}" style="width: 50%" alt="">
+          </div>
+          <div *ngIf="listBlogs.images" class="d-flex justify-content-center">
+            <img src="/assets/blogs/{{listBlogs.images}}" style="width:50%" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="listBlogs <= 0"></div> -->
+</div>

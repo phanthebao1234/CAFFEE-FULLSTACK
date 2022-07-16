@@ -9,6 +9,8 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  p: number = 1;
+  count: number = 9;
   listProduct: Product[] = [];
   searchText:string = "";
   constructor(private productService: ProductService, private router: Router ) { }
@@ -45,8 +47,10 @@ export class ProductComponent implements OnInit {
     this.filteredItems = [...this.listProduct];
   }
 
-  detail(id: number) {
-    this.router.navigate(['/client/detail/', id])
+  detail(id: any) {
+    console.log(id);
+
+    this.router.navigate(['/client/detail/'+id]);
   }
 
   // Sort price

@@ -140,16 +140,7 @@
       "description": "Tại The Coffee House, Cold Brew được ủ và phục vụ mỗi ngày từ 100% hạt Arabica Cầu Đất với hương gỗ thông, hạt dẻ, nốt sô-cô-la đặc trưng, thoang thoảng hương khói nhẹ giúp Cold Brew giữ nguyên vị tươi mới.",
       "price": 45,
       "quantity": 0,
-      "id": "P2KGaqr"
-    },
-    {
-      "name": "The Bao",
-      "image": "https://files.fullstack.edu.vn/f8-prod/c",
-      "category": "tai lieu",
-      "description": "Tại The Coffee House, Cold Brew được ủ và phục vụ mỗi ngày từ 100% hạt Arabica Cầu Đất với hương gỗ thông, hạt dẻ, nốt sô-cô-la đặc trưng, thoang thoảng hương khói nhẹ giúp Cold Brew giữ nguyên vị tươi mới.",
-      "price": 13,
-      "quantity": 0,
-      "id": "GRTEFdC"
+      "id": 1657955313073
     }
   ],
   "blogs": [
@@ -167,14 +158,24 @@
       "imagesThumbnails": "blog1.jpg"
     },
     {
-      "title": "jshdflakjhsdflkjahsdf",
-      "description": "ákjhfdlkajhsdflkajshdf",
-      "content": "<p>alkjshdf;alkjshdflkajhf</p>\n",
-      "date": "2022-07-15",
-      "hashtags": "#abc",
-      "images": "blog1-image1.jpg, blog1-imgae2.jpg",
-      "imagesThumbnails": "blog2.jpg",
+      "title": "TẠI SAO CÀ PHÊ CÓ VỊ CHUA?",
+      "description": "Cà phê là cây có giá trị kinh tế cao khi nhu cầu tiêu thụ...",
+      "content": "<p>C&agrave; ph&ecirc; sẽ c&agrave;ng ngon khi được trồng ở v&ugrave;ng đất cao nguy&ecirc;n, nơi c&oacute; kh&iacute; hậu nhiệt đới n&oacute;ng ẩm, mưa nhiều, đất đai m&agrave;u mỡ. N&oacute; c&oacute; khả năng ph&aacute;t triển tốt ở nơi c&oacute; nhiều &aacute;nh s&aacute;ng, độ pH l&yacute; tưởng ở mức 6 - 6.5, đặc biệt để hạt c&agrave; ph&ecirc; cho năng suất v&agrave; chất lượng cao, cần phải lưu &yacute; c&aacute;c kỹ thuật&nbsp; trồng trọt sau.&nbsp;</p>\n\n<p>Arabica y&ecirc;u cầu đất c&oacute; độ dốc dưới 200, độ xốp tr&ecirc;n 60%, tầng đất mặt d&agrave;y tr&ecirc;n 70 cm, h&agrave;m lượng m&ugrave;n của lớp đất mặt tr&ecirc;n 2,5%. Đất phải c&oacute; độ cao từ 1000 &ndash; 1500m so với mặt nước biển, lượng mưa trung b&igrave;nh từ 1200 &ndash; 1900 mm, nhiệt độ từ 15 độ C &ndash; 24 độ C v&agrave; phải c&oacute; m&ugrave;a kh&ocirc; hạn tối thiểu 2 th&aacute;ng. C&ograve;n Robusta th&igrave; &iacute;t phức tạp hơn, n&oacute; th&iacute;ch hợp với kh&iacute; hậu nhiệt đới n&oacute;ng ẩm, nhiệt độ từ 24 độ C&nbsp;&ndash; 26 độ C, lượng mưa tr&ecirc;n 2000mm/năm v&agrave; c&oacute; độ ẩm cao.&nbsp;</p>\n",
+      "date": "2022-07-01",
+      "hashtags": "#caffee",
+      "images": "blog2-image1.jpg",
+      "imagesThumbnails": "blog7.jpg",
       "id": 2
+    },
+    {
+      "title": "HIỂU ĐÚNG VỀ CÀ PHÊ HÒA TAN",
+      "description": "Uống cà phê hoà tan có tốt không chắc hẳn là câu hỏi mà nhiều...",
+      "content": "<p>C&agrave; ph&ecirc; h&ograve;a tan đ&atilde; qu&aacute; quen thuộc n&ecirc;n chắc chắn ai cũng biết đến n&oacute;. L&agrave; thức uống liền, c&agrave; ph&ecirc; ho&agrave; tan c&oacute; dạng bột nhuyễn, kết hợp sẵn với đường, sữa v&agrave; được tổng hợp qua c&aacute;c c&ocirc;ng đoạn sấy v&agrave; l&agrave;m kh&ocirc;. Khi bạn muốn thưởng thức chỉ cần pha c&agrave; ph&ecirc; ho&agrave; tan với nước n&oacute;ng l&agrave; c&oacute; thể d&ugrave;ng ngay lập tức. Sở dĩ c&agrave; ph&ecirc; ho&agrave; tan tan nhanh trong nước l&agrave; do qu&aacute; tr&igrave;nh chế biến đ&atilde; được chiết xuất v&agrave; giữ lại những chất tan được. C&ograve;n c&aacute;c th&agrave;nh phần kh&ocirc;ng tan v&agrave; tạp chất kh&aacute;c đ&atilde; được loại bỏ đi.&nbsp;</p>\n\n<p>C&agrave; ph&ecirc; ho&agrave; tan v&agrave; c&agrave; ph&ecirc; truyền thống sẽ c&oacute; sự kh&aacute;c biệt giữa h&igrave;nh thức, t&iacute;nh chất v&agrave; quy tr&igrave;nh thực hiện. Sự kh&aacute;c biệt về tốc độ pha chế v&agrave; t&iacute;nh tiện lợi l&agrave; điều nổi bật nhất m&agrave; ch&uacute;ng ta c&oacute; thể dễ d&agrave;ng thấy được. C&agrave; ph&ecirc; truyền thống đ&ograve;i hỏi kh&acirc;u pha chế phức tạp v&igrave; cần phải xay hạt hay sử dụng th&ecirc;m nhiều dụng cụ kh&aacute;c.&nbsp;</p>\n",
+      "date": "2022-07-09",
+      "hashtags": "#caffee, #hoatan",
+      "images": "blog3-image1.jpg",
+      "imagesThumbnails": "blog8.jpg",
+      "id": 3
     }
   ]
 }

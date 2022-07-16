@@ -17,11 +17,11 @@ export class ProductService extends BaseService {
     return this.get("/products")
   }
 
-  getAllProductDetail(id: number) {
+  getAllProductDetail(id: any) {
     return this.get("/products/" + id)
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: any) {
     return this.delete("/products/" + id)
   }
 
@@ -29,7 +29,7 @@ export class ProductService extends BaseService {
     return this.post("/products/", products)
   }
 
-  editProduct(products: Product, id: number) {
+  editProduct(products: Product, id: any) {
     return this.put("/products/" + id, products)
   }
 }

@@ -1,5 +1,5 @@
 export class Product {
-  id:number = 0;
+  id:any;
   name:string = "";
   image: string = "";
   price:number = 0;

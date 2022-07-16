@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="user row">
+    <div class="col-lg-4">
+      <img src="/assets/noimage.jpg" style="width:100%" alt="">
+    </div>
+    <div class="col-lg-8 ">
+      <h3 class="fw-bold text-info mb-3">Tài Khoản Của Tôi</h3>
+      <ul class="list-group list-group-flush ms-3" *ngFor="let us of user">
+        <li class="list-group-item" >Họ Tên Khách Hàng: <span class="fw-bold">{{ us.fullName }}</span></li>
+        <li class="list-group-item">Địa chỉ Email: <span class="fw-bold">{{ us.email }}</span> </li>
+        <li class="list-group-item">Số Điện Thoại: <span class="fw-bold">{{ us.phoneNumber }}</span></li>
+        <li class="list-group-item">Mật khẩu:
+          <input disabled type="text" appToggle type="password" value="{{ us.password }}"></li>
+      </ul>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary my-4 ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Chỉnh sửa thông tin cá nhân
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #frmedit="ngForm" (submit)="editProfile(frmedit)">
+          <div class="mb-3">
+            <label for="exampleInputName"  class="form-label"
+              >Họ và tên</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputName"
+              aria-describedby="emailHelp"
+              [(ngModel)]="users.fullName"
+              #fullName="ngModel"
+              name="fullName"
+              required
+              minlength="4"
+              maxlength="30"
+            />
+            <div *ngIf="fullName.invalid && fullName.dirty" class="alert alert-danger" role="alert">
+              <strong *ngIf="fullName.errors?.['required']">Họ tên là bắt buộc</strong>
+              <strong *ngIf="fullName.errors?.['minlength']">Họ tên tối thiểu 4 kí tự</strong>
+              <strong *ngIf="fullName.errors?.['maxlength']">Họ tên tối đa 30 kí tự</strong>
+            </div>
+            <label for="exampleInputPhone" class="form-label"
+              >Số điện thoại</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputPhone"
+              aria-describedby="emailHelp"
+              [(ngModel)]="users.phoneNumber"
+              name="phoneNumber"
+              #phoneNumber="ngModel"
+              required
+              minlength="9"
+              maxlength="10"
+
+            />
+            <div *ngIf="phoneNumber.invalid && phoneNumber.dirty" class="alert alert-danger" role="alert">
+              <strong *ngIf="phoneNumber.errors?.['required']">Số điện thoại là bắt buộc</strong>
+              <strong *ngIf="phoneNumber.errors?.['minlength']">Số điện thoại tối thiểu 9 kí tự</strong>
+              <strong *ngIf="phoneNumber.errors?.['maxlength']">Số điện thoại tối đa 10 kí tự</strong>
+            </div>
+            <label for="exampleInputEmail1" class="form-label"
+              >Tài khoản Email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              #email="ngModel"
+              [(ngModel)]="users.email"
+              name="email"
+              required
+              disabled
+            />
+            <div *ngIf="email.invalid && email.dirty" class="alert alert-danger" role="alert">
+              <strong *ngIf="email.errors?.['required']">Tài khoản Email là bắt buộc</strong>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Mật khẩu</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              [(ngModel)]="users.password"
+              #password="ngModel"
+              name="password"
+              required
+            />
+            <div *ngIf="password.invalid && password.dirty" class="alert alert-danger" role="alert">
+              <strong *ngIf="password.errors?.['required']">Mật khẩu là bắt buộc</strong>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary text-capitalize">Cập nhật tài khoản</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>

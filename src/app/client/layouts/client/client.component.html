@@ -38,14 +38,6 @@
         </li>
         <li>
           <a
-            [routerLink]="['/client/contact']"
-            class="nav-link px-2 link-dark"
-            routerLinkActive="routerLinkActive"
-            >Liên hệ</a
-          >
-        </li>
-        <li>
-          <a
             [routerLink]="['/client/about']"
             class="nav-link px-2 link-dark"
             routerLinkActive="routerLinkActive"
@@ -58,7 +50,7 @@
           <h4 class="fw-bold">{{item.fullName}}</h4>
           <div class="hidden-menu">
             <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">Tài khoản của tôi</a>
+              <a [routerLink]="['/client/user']" class="list-group-item list-group-item-action">Tài khoản của tôi</a>
               <a [routerLink]="['/client/cart']" class="list-group-item list-group-item-action">Giỏ hàng</a>
               <a [routerLink]="['/client/login']" (click)="logout()" class="list-group-item list-group-item-action">Đăng xuất</a>
             </div>

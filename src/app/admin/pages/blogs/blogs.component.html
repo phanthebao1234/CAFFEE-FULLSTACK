@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let blog of listBlogs" class="">
+        <tr *ngFor="let blog of listBlogs | paginate: { itemsPerPage: count, currentPage: p};" class="">
           <td>{{ blog.id }}</td>
           <td class="blogs__title">
             <p >{{ blog.title }}</p>
@@ -38,6 +38,9 @@
         </tr>
       </tbody>
     </table>
+    <div class="text-right">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
   </div>
 </div>
 
@@ -50,7 +53,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form #frmAddBlogs="ngForm" (submit)="addProduct(frmAddBlogs)">
+        <form #frmAddBlogs="ngForm" (submit)="addBlogs(frmAddBlogs)">
           <div class="mb-3">
             <label for="exampleInputName"  class="form-label"
               >Tiêu đề bài viết</label
@@ -81,7 +84,6 @@
               name="description"
               #description="ngModel"
               required
-              minlength="9"
               maxlength="400"
             />
             <div *ngIf="description.invalid && description.dirty" class="alert alert-danger" role="alert">
@@ -276,9 +278,7 @@
             <div *ngIf="imagesThumbnails.invalid && imagesThumbnails.dirty" class="alert alert-danger" role="alert">
               <strong *ngIf="imagesThumbnails.errors?.['required']">Hình tiêu đề là bắt buộc</strong>
             </div>
-
           </div>
-
           <button type="submit" class="btn btn-primary text-capitalize text-center">Chỉnh Sửa Bài Viết</button>
       </form>
       </div>

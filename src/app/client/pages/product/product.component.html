@@ -30,17 +30,23 @@
         <img src="/assets/images/background.jpg" products__banner-img alt="">
       </div>
       <div class="row products__list" *ngIf="filteredItems.length > 0">
-        <div class="col-sm-4" *ngFor="let product of filteredItems | search: searchText" (click)="detail(product.id)">
+        <div class="col-sm-4" *ngFor="let product of filteredItems | paginate: { itemsPerPage: count, currentPage: p} | search: searchText" (click)="detail(product.id)">
           <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
           <h6 class="products__list-name">{{ product.name }}</h6>
           <p class="products__list-price">{{ product.price }} $</p>
         </div>
+        <div class="text-right">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
       </div>
       <div class="row products__list" *ngIf="filteredItems.length == 0">
-        <div class="col-sm-4" *ngFor="let product of listProduct | search: searchText" (click)="detail(product.id)">
+        <div class="col-sm-4" *ngFor="let product of listProduct | paginate: { itemsPerPage: count, currentPage: p} | search: searchText" (click)="detail(product.id)">
           <img src="/assets/images/{{ product.image }}" class="products__list-img" alt="">
           <h6 class="products__list-name">{{ product.name }}</h6>
           <p class="products__list-price">{{ product.price }}.000đ</p>
+        </div>
+        <div class="text-right">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
       </div>
       <h1 *ngIf="listProduct.length == 0">Loading...</h1>
